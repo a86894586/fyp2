@@ -5,6 +5,13 @@ const PORT = 8080;
 // 處理 POST 請求的 JSON 解析
 app.use(express.json());
 
+app.use(function(req, res, next) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+  next();
+});
+
 // 處理 GET 請求的路由
 app.get('/api/menu', (req, res) => {
   // 處理獲取菜單資料的邏輯，例如從資料庫或其他資料來源獲取資料

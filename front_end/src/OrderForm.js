@@ -16,7 +16,7 @@ const OrderForm = ({ addOrder }) => {
     };
 
     // 發送 POST 請求到後端 API
-    axios.post('/api/orders', order)
+    axios.post('http://localhost:8080/api/orders', order)
       .then((response) => {
         console.log(response.data); // 可以處理回傳的訊息或其他操作
         addOrder(order); // 將訂單新增到前端的狀態

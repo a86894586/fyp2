@@ -26,7 +26,7 @@ const App = () => {
       <ul>
         {orders.map((order, index) => (
           <li key={index}>
-            {order}
+            {order.foodItem} {order.quantity}
             <button onClick={() => deleteOrder(index)}>Delete</button>
           </li>
         ))}
